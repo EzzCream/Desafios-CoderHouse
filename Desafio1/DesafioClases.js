@@ -27,6 +27,7 @@ class Usuario {
     countMascotas(){
         return this._mascota.length;
     }
+    /*
     addBook(libroP,autP){
         this._libros.libro.push(libroP);
         this._libros.autor.push(autP);
@@ -34,10 +35,18 @@ class Usuario {
     getBookNames(){
         return this._libros.libro;
     }
+    */
+    addBook(libro,autor){
+        this._libros.push({libro,autor});
+    }
+    getBookNames(){
+        return this._libros.map(l => l.libro);
+    }
 
 }
 
-const usuario1 = new Usuario('Oscar','Antonio',{libro: ['Libro1'], autor: ['Autor1']},['Perro','Gato']);
+//const usuario1 = new Usuario('Oscar','Antonio',{libro: ['Libro1'], autor: ['Autor1']},['Perro','Gato']);
+const usuario1 = new Usuario('Oscar','Antonio',[{libro: 'Libro1', autor: 'Autor1'}],['Perro','Gato']);
 
 //Obtener el nombre completo de la persona
 console.log(usuario1.getFullName());
