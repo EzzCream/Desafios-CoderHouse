@@ -25,31 +25,44 @@ class Contenedor {
     }
 
     async getAll(){
-        const data = await fs.promises.readFile('Desafio.txt','utf-8');
-        return console.log(JSON.parse(data));
+        try {
+            const data = await fs.promises.readFile('Desafio.txt','utf-8');
+            return console.log(JSON.parse(data))
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     async getById(buscar){
 
-        this._buscar = buscar - 1;
+        try {
+            this._buscar = buscar - 1;
 
-        const data = await fs.promises.readFile('Desafio.txt','utf-8');
-        const elem = JSON.parse(data);
-        return console.log(elem[this._buscar]);
+            const data = await fs.promises.readFile('Desafio.txt','utf-8');
+            const elem = JSON.parse(data);
+            return console.log(elem[this._buscar]);
+        } catch (error) {
+            console.log(error);
+        }
         
     }
 
     async deleteById(borrar){
 
-        this._borrar = borrar - 1;
-        const data = await fs.promises.readFile('Desafio.txt','utf-8');
-        const elem = JSON.parse(data);
+        try {
+            this._borrar = borrar - 1;
+            const data = await fs.promises.readFile('Desafio.txt','utf-8');
+            const elem = JSON.parse(data);
+    
+            elem.splice(this._borrar,1);
+    
+            await fs.promises.writeFile("Desafio.txt",JSON.stringify(elem));
+    
+            return console.log(`Se ha eliminado el elemento con el ID: ${borrar}`);
+        } catch (error) {
+            console.log(error);
+        }
 
-        elem.splice(this._borrar,1);
-
-        await fs.promises.writeFile("Desafio.txt",JSON.stringify(elem));
-
-        return console.log(`Se ha eliminado el elemento con el ID: ${borrar}`);
     }
 
     async deleteAll(){
@@ -71,10 +84,10 @@ const elemento1 = new Contenedor([]);
 // * Salvando personas en el arreglo 
 elemento1.save('Angelica','Torres');
 elemento1.save('Uriel','Badillo');
-elemento1.save('Oscar','Antonio');
+//elemento1.save('Oscar','Antonio');
 
 // * Obtener por un ID
-elemento1.getById(3);
+elemento1.getById(2);
 
 // * Obteniendo TODO lo que se encuentra en el archivo
 elemento1.getAll();
