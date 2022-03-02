@@ -84,16 +84,16 @@ const elemento1 = new Contenedor([]);
 // * Salvando personas en el arreglo 
 elemento1.save('Angelica','Torres');
 elemento1.save('Uriel','Badillo');
-//elemento1.save('Oscar','Antonio');
+elemento1.save('Oscar','Antonio');
 
 // * Obtener por un ID
-elemento1.getById(2);
+//elemento1.getById(2);
 
 // * Obteniendo TODO lo que se encuentra en el archivo
-elemento1.getAll();
+//elemento1.getAll();
 
 // * Eliminar por el ID
-elemento1.deleteById(1);
+//elemento1.deleteById(1);
 
 // ! Eliminar todo
 //elemento1.deleteAll();
