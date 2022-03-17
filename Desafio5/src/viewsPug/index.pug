@@ -1,0 +1,19 @@
+html
+    head
+        title= "Mi primer pug"
+    body
+        h1= "Usando pug"
+        table
+            tr
+                td= "Titulo"
+                td= "Precio"
+                td= "Logo"
+            -
+            each item in prod
+                tr
+                    td= item.titulo
+                    td= item.precio
+                    - var url = item.logo;
+                    td
+                        img(src=url)
+        a(href="http://localhost:8080") form

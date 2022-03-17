@@ -1,0 +1,18 @@
+<h2>Historial</h2>
+<br>
+<table>
+    <tr>
+        <thead>
+            <td>Titulo</td>
+            <td>Precio</td>
+            <td>Logo</td>
+        </thead>
+        {{#each prod}}
+        <tbody>
+            <td>{{this.titulo}}</td>
+            <td>{{this.precio}}</td>
+            <td><img src="{{this.logo}}" alt=""></td>
+        </tbody>
+        {{/each}}
+    </tr>
+</table>

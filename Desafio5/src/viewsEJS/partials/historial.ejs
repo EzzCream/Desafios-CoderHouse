@@ -1,0 +1,18 @@
+<h2>Historial</h2>
+<br>
+<table>
+    <tr>
+        <thead>
+            <td>Titulo</td>
+            <td>Precio</td>
+            <td>Logo</td>
+        </thead>
+        <% prod.forEach(function(prod){ %> 
+        <tbody>
+            <td><%= prod.titulo %></td>
+            <td><%= prod.precio %></td>
+            <td><img src="<%= prod.logo %>" alt=""></td>
+        </tbody>
+        <% }) %> 
+    </tr>
+</table>
