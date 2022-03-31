@@ -1,0 +1,43 @@
+/* From cssbuttons.io by @SharpTH */
+.card {
+    margin: 30px;
+    cursor: pointer;
+    width: 250px;
+    height: 350px;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 255, .2);
+    transition: all .2s;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:hover {
+    box-shadow: -12px 12px 2px -1px rgba(0, 0, 255, .2);
+}
+.tarjetas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+h1{
+    text-align: center;
+}
+.icono{
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+}
+.principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+.formulario{
+    padding: 20px;
+    margin: 20px;
+}

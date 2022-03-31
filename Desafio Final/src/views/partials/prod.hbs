@@ -1,0 +1,12 @@
+<h1 class="m-3">Productos</h1>
+<section class="tarjetas">
+    {{#each pro}}
+    <div class="card">
+        <img src="{{this.url}}" class="icono" alt="">
+        <h1>{{this.nombre}}</h1>
+        <p>Precio: ${{this.precio}}</p>
+        <p>Stock: {{this.stock}} piezas</p>
+        <p>ID: {{this.id}}</p>
+    </div>
+    {{/each}}
+</section>
