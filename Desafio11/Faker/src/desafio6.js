@@ -5,6 +5,8 @@ const { engine } = require('express-handlebars');
 const server = http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server);
+const { faker } = require('@faker-js/faker');
+const { ftruncate } = require('fs');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -48,6 +50,15 @@ io.on('connection', (socket) => {
 	});
 });
 
+function falso() {
+	faker.locale = 'es';
+	return {
+		titulo: faker.commerce.productName(),
+		precio: faker.commerce.price(),
+		logo: faker.image.imageUrl(),
+	};
+}
+
 //TODO ----------- Clase del producto ----------------
 class Productos {
 	constructor(producto) {
@@ -66,6 +77,13 @@ class Productos {
 		producto1.id = id;
 		this._producto.push(producto1);
 	}
+	fakeProd() {
+		for (let x = 0; x < 5; x++) {
+			const pr = falso();
+			pr.id = x + 1;
+			this._producto.push(pr);
+		}
+	}
 }
 
 const producto1 = new Productos();
@@ -74,6 +92,13 @@ let prod = producto1.producto;
 //TODO ------------------- GET Ir al historial ---------------------------------------
 app.get('/productos', (req, res) => {
 	res.render('main');
+});
+app.post('/api/productos-test', (req, res) => {
+	producto1.fakeProd();
+	res.status(200).send('Productos agregados');
+});
+app.get('/api/productos-test', (req, res) => {
+	res.status(200).json(producto1.producto);
 });
 
 //TODO Server ajustes.
