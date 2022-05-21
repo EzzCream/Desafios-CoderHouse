@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/estilos.css" />
+		<title>Productos</title>
+	</head>
+
+	<body>
+		<h1>Bienvenido <%= prueba %></h1>
+		<%- include('../partials/logout.ejs') %>
+		<section class="main">
+			<%- include('../partials/form.ejs') %>
+			<main class="container">
+				<%- include('../partials/list.ejs') %>
+			</main>
+			<%- include('../partials/chat.ejs') %>
+		</section>
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+			const socket = io();
+
+			socket.on('mensajeConexion', (data) => {
+				console.log(data);
+			});
+			function addMessage() {
+				const titulo = document.getElementById('titulo').value;
+				const precio = document.getElementById('precio').value;
+				const logo = document.getElementById('logo').value;
+				socket.emit('mensajeFront', {
+					titulo,
+					precio,
+					logo,
+				});
+			}
+			socket.on('mensajeBack', (data) => {
+				console.log('recibido: ', data);
+				let innerText = '';
+				data.map((mensaje) => {
+					innerText += `
+                <tr>
+                    <td>${mensaje.titulo}</td>
+                    <td>${mensaje.precio}</td>
+                    <td><img src="${mensaje.logo}" style="height: 100px; width: 150px;" ></td>
+                </tr>
+                `;
+				});
+				document.getElementById('mensaje').innerHTML = innerText;
+			});
+
+			//Chat
+			socket.on('messageBack2', (data) => {
+				console.log('recibida data: ', data);
+				let innerText2 = '';
+				data.map((message) => {
+					innerText2 += `
+                <li>
+                    <div style="color: red;">${message.tiempo}</div>
+                    <div style="color: blue;">Correo: ${message.author}</div>
+                    <div style="color: green;">Mensaje: ${message.text}</div>
+                </li>
+                <br>
+                `;
+				});
+				document.getElementById('messages').innerHTML = innerText2;
+			});
+			function addMessage2() {
+				const tiempoTranscurrido = Date.now();
+				const hoy = new Date(tiempoTranscurrido);
+				hoy.toUTCString();
+				const tiempo = hoy.toUTCString();
+				const author = document.getElementById('author').value;
+				const text = document.getElementById('text').value;
+				socket.emit('messageFront2', {
+					author,
+					text,
+					tiempo,
+				});
+			}
+		</script>
+	</body>
+</html>
