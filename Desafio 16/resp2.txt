@@ -1,0 +1,262 @@
+Statistical profiling result from resp.log, (341 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+    236   69.2%          C:\Windows\SYSTEM32\ntdll.dll
+    100   29.3%          C:\Program Files\nodejs\node.exe
+      1    0.3%          C:\Windows\System32\KERNELBASE.dll
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      2    0.6%   50.0%  LazyCompile: *resolve node:path:158:10
+      1    0.3%   25.0%  LazyCompile: *readPackageScope node:internal/modules/cjs/loader:321:26
+      1    0.3%   25.0%  Function: ^<anonymous> node:internal/validators:154:3
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+      4    1.2%  100.0%  JavaScript
+      0    0.0%    0.0%  C++
+      1    0.3%   25.0%  GC
+    337   98.8%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+    236   69.2%  C:\Windows\SYSTEM32\ntdll.dll
+      7    3.0%    C:\Program Files\nodejs\node.exe
+      3   42.9%      C:\Program Files\nodejs\node.exe
+      1   33.3%        Function: ~<anonymous> C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\webidl-conversions\lib\index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1   33.3%        Function: ~<anonymous> C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\express\node_modules\debug\src\node.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1   33.3%        Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1   14.3%      LazyCompile: ~supportsOpMsg C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongodb\lib\cmap\connection.js:495:23
+      1  100.0%        LazyCompile: ~command C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongodb\lib\cmap\connection.js:247:12
+      1  100.0%          LazyCompile: ~<anonymous> C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongodb\lib\cmap\connect.js:78:43
+      1  100.0%            LazyCompile: ~prepareHandshakeDocument C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongodb\lib\cmap\connect.js:139:34
+      1   14.3%      LazyCompile: ~of C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\socket.io\dist\index.js:371:7
+      1  100.0%        LazyCompile: ~Server C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\socket.io\dist\index.js:49:16
+      1  100.0%          Script: ~<anonymous> file:///C:/Users/Patat/OneDrive/Documentos/CODERHOUSE/Desafios/Desafio%2016/src/server.js:1:1
+      1  100.0%            C:\Program Files\nodejs\node.exe
+      1   14.3%      LazyCompile: ~has C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongodb\lib\connection_string.js:195:8
+      1  100.0%        LazyCompile: ~parseOptions C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongodb\lib\connection_string.js:208:22
+      1  100.0%          LazyCompile: ~MongoClient C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongodb\lib\mongo_client.js:60:16
+      1  100.0%            LazyCompile: ~<anonymous> C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongoose\lib\connection.js:781:31
+      1   14.3%      LazyCompile: ~YargsInstance file:///C:/Users/Patat/OneDrive/Documentos/CODERHOUSE/Desafios/Desafio%2016/node_modules/yargs/build/lib/yargs-factory.js:76:16
+      1  100.0%        LazyCompile: ~<anonymous> file:///C:/Users/Patat/OneDrive/Documentos/CODERHOUSE/Desafios/Desafio%2016/node_modules/yargs/build/lib/yargs-factory.js:27:12
+      1  100.0%          Script: ~<anonymous> file:///C:/Users/Patat/OneDrive/Documentos/CODERHOUSE/Desafios/Desafio%2016/src/server.js:1:1
+      1  100.0%            C:\Program Files\nodejs\node.exe
+
+    100   29.3%  C:\Program Files\nodejs\node.exe
+     93   93.0%    C:\Program Files\nodejs\node.exe
+     29   31.2%      Function: ^compileFunction node:vm:308:25
+     29  100.0%        Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+     29  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+     28   96.6%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1    3.4%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      7    7.5%      Function: ^stat node:internal/modules/cjs/loader:151:14
+      6   85.7%        Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      5   83.3%          Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      5  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1   16.7%          Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1   14.3%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      7    7.5%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      5   71.4%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1   20.0%          LazyCompile: ~lazyRequire node:internal/crypto/util:67:21
+      1  100.0%            LazyCompile: ~get node:crypto:287:8
+      1   20.0%          Function: ~<anonymous> node:internal/crypto/pbkdf2:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   20.0%          Function: ~<anonymous> node:http:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   20.0%          Function: ~<anonymous> node:cluster:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   20.0%          Function: ~<anonymous> node:_http_client:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   14.3%        LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1  100.0%          LazyCompile: ~loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1  100.0%            LazyCompile: ~builtinStrategy node:internal/modules/esm/translators:252:58
+      1   14.3%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      6    6.5%      Function: ^realpathSync node:fs:2412:22
+      6  100.0%        Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      6  100.0%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      5   83.3%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      1   16.7%            LazyCompile: ~tryPackage node:internal/modules/cjs/loader:338:20
+      6    6.5%      Function: ^openSync node:fs:576:18
+      6  100.0%        Function: ^readFileSync node:fs:450:22
+      6  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      6  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      6    6.5%      C:\Program Files\nodejs\node.exe
+      1   16.7%        LazyCompile: ~parseOpts C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\@mapbox\node-pre-gyp\lib\node-pre-gyp.js:144:37
+      1  100.0%          LazyCompile: ~Run C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\@mapbox\node-pre-gyp\lib\node-pre-gyp.js:78:13
+      1  100.0%            LazyCompile: ~exports.find C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\@mapbox\node-pre-gyp\lib\pre-binding.js:17:24
+      1   16.7%        LazyCompile: ~isIPv6 node:internal/net:35:16
+      1  100.0%          LazyCompile: ~isIP node:internal/net:39:14
+      1  100.0%            LazyCompile: ~lookup node:dns:97:16
+      1   16.7%        LazyCompile: ~Connection.openUri C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongoose\lib\connection.js:675:40
+      1  100.0%          LazyCompile: ~<anonymous> C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongoose\lib\index.js:341:49
+      1  100.0%            LazyCompile: ~<anonymous> C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:22
+      1   16.7%        Function: ~<anonymous> C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\send\node_modules\debug\src\node.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1   16.7%        Function: ^splitRoot node:fs:2362:33
+      1  100.0%          Function: ^realpathSync node:fs:2412:22
+      1  100.0%            Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      2    2.2%      LazyCompile: ~compileFunction node:vm:308:25
+      2  100.0%        LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1017:18
+      2  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1057:37
+      2  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      2    2.2%      LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%        LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1   50.0%          Function: ~<anonymous> node:internal/modules/esm/translators:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   50.0%          Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    2.2%      Function: ^read node:internal/modules/package_json_reader:16:14
+      2  100.0%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      2  100.0%          Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      2  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      2    2.2%      Function: ^getOptions node:internal/fs/utils:314:20
+      2  100.0%        Function: ^readFileSync node:fs:450:22
+      2  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      2  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      2    2.2%      Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2  100.0%        Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      2  100.0%          Function: ^require node:internal/modules/cjs/helpers:101:31
+      1   50.0%            Function: ~<anonymous> C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\ws\lib\buffer-util.js:1:1
+      1   50.0%            Function: ~<anonymous> C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\semver\index.js:1:1
+      1    1.1%      LazyCompile: ~spawn node:child_process:692:15
+      1  100.0%        LazyCompile: ~fork node:child_process:114:14
+      1  100.0%          Script: ~<anonymous> file:///C:/Users/Patat/OneDrive/Documentos/CODERHOUSE/Desafios/Desafio%2016/src/controllers/auth.controller.js:1:1
+      1  100.0%            C:\Program Files\nodejs\node.exe
+      1    1.1%      LazyCompile: ~set search node:internal/url:900:13
+      1  100.0%        C:\Program Files\nodejs\node.exe
+      1  100.0%          LazyCompile: ~finalizeResolution node:internal/modules/esm/resolve:391:28
+      1  100.0%            Function: ^moduleResolve node:internal/modules/esm/resolve:966:23
+      1    1.1%      LazyCompile: ~realpathSync node:fs:2412:22
+      1  100.0%        LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%          LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1    1.1%      LazyCompile: ~processIncomingData C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongodb\lib\cmap\message_stream.js:79:29
+      1  100.0%        LazyCompile: ~_write C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongodb\lib\cmap\message_stream.js:26:11
+      1  100.0%          LazyCompile: ~writeOrBuffer node:internal/streams/writable:365:23
+      1  100.0%            LazyCompile: ~_write node:internal/streams/writable:283:16
+      1    1.1%      LazyCompile: ~formatRaw node:internal/util/inspect:820:19
+      1  100.0%        LazyCompile: ~formatValue node:internal/util/inspect:745:21
+      1  100.0%          LazyCompile: ~inspect node:internal/util/inspect:292:17
+      1  100.0%            LazyCompile: ~createAppender C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\log4js\lib\appenders\index.js:62:24
+      1    1.1%      LazyCompile: ~emit node:events:474:44
+      1  100.0%        LazyCompile: ~_addListener node:events:554:22
+      1  100.0%          LazyCompile: ~addListener node:events:622:58
+      1  100.0%            LazyCompile: ~setupWarningHandler node:internal/bootstrap/pre_execution:134:29
+      1    1.1%      LazyCompile: ~deserialize C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\bson\lib\parser\deserializer.js:36:21
+      1  100.0%        LazyCompile: ~deserialize C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\bson\lib\bson.js:162:21
+      1  100.0%          LazyCompile: ~parse C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongodb\lib\cmap\commands.js:384:10
+      1  100.0%            LazyCompile: ~onMessage C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongodb\lib\cmap\connection.js:152:14
+      1    1.1%      LazyCompile: ~colorize C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\log4js\lib\layouts.js:38:18
+      1  100.0%        LazyCompile: ~timestampLevelAndCategory C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\log4js\lib\layouts.js:42:35
+      1  100.0%          LazyCompile: ~colouredLayout C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\log4js\lib\layouts.js:71:24
+      1  100.0%            LazyCompile: ~<anonymous> C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\log4js\lib\appenders\console.js:5:10
+      1    1.1%      LazyCompile: ~addIdGetter C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongoose\lib\helpers\schema\idGetter.js:7:38
+      1  100.0%        LazyCompile: ~_preCompile C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongoose\lib\schema.js:2334:52
+      1  100.0%          LazyCompile: ~compile C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongoose\lib\model.js:4816:33
+      1  100.0%            LazyCompile: ~Mongoose._model C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongoose\lib\index.js:535:37
+      1    1.1%      LazyCompile: ~Resolver node:internal/dns/utils:53:14
+      1  100.0%        Function: ~<anonymous> node:internal/dns/utils:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    1.1%      LazyCompile: ~<anonymous> file:///C:/Users/Patat/OneDrive/Documentos/CODERHOUSE/Desafios/Desafio%2016/node_modules/yargs/build/lib/yargs-factory.js:1317:40
+      1  100.0%        LazyCompile: ~parse file:///C:/Users/Patat/OneDrive/Documentos/CODERHOUSE/Desafios/Desafio%2016/node_modules/yargs/build/lib/yargs-factory.js:683:10
+      1  100.0%          LazyCompile: ~get file:///C:/Users/Patat/OneDrive/Documentos/CODERHOUSE/Desafios/Desafio%2016/node_modules/yargs/build/lib/yargs-factory.js:30:18
+      1  100.0%            Script: ~<anonymous> file:///C:/Users/Patat/OneDrive/Documentos/CODERHOUSE/Desafios/Desafio%2016/src/server.js:1:1
+      1    1.1%      LazyCompile: ~<anonymous> C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongodb\lib\operations\execute_operation.js:16:48
+      1  100.0%        LazyCompile: ~maybePromise C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongodb\lib\utils.js:397:22
+      1  100.0%          LazyCompile: ~executeOperation C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongodb\lib\operations\execute_operation.js:11:26
+      1  100.0%            LazyCompile: ~createCollection C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongodb\lib\db.js:153:21
+      1    1.1%      LazyCompile: *resolve node:path:158:10
+      1  100.0%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      1  100.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      1  100.0%            Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      1    1.1%      LazyCompile: *getPathFromURLWin32 node:internal/url:1360:29
+      1  100.0%        Function: ^fileURLToPath node:internal/url:1413:23
+      1  100.0%          Function: ^getPackageScopeConfig node:internal/modules/esm/resolve:248:31
+      1  100.0%            Function: ^getPackageType node:internal/modules/esm/resolve:826:24
+      1    1.1%      Function: ~<anonymous> C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\tr46\lib\regexes.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.1%      Function: ^tryStatSync node:fs:404:21
+      1  100.0%        Function: ^readFileSync node:fs:450:22
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.1%      Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%        Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      1  100.0%          Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1    1.1%      Function: ^resetQueue C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\graceful-fs\graceful-fs.js:383:21
+      1  100.0%        Function: ^closeSync C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\graceful-fs\graceful-fs.js:72:24
+      1  100.0%          Function: ^readFileSync node:fs:450:22
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1    1.1%      Function: ^readSync node:fs:684:18
+      1  100.0%        Function: ^tryReadSync node:fs:429:21
+      1  100.0%          Function: ^readFileSync node:fs:450:22
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1    1.1%      Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%        Function: ^read node:internal/modules/package_json_reader:16:14
+      1  100.0%          Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      1  100.0%            Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      1    1.1%      Function: ^moduleStrategy node:internal/modules/esm/translators:110:56
+      1  100.0%        Function: ^moduleProvider node:internal/modules/esm/loader:279:28
+      1  100.0%          C:\Program Files\nodejs\node.exe
+      1    1.1%      Function: ^URL node:internal/url:620:14
+      1  100.0%        LazyCompile: ~packageResolve node:internal/modules/esm/resolve:875:24
+      1  100.0%          LazyCompile: ~moduleResolve node:internal/modules/esm/resolve:966:23
+      1  100.0%            LazyCompile: ~defaultResolve node:internal/modules/esm/resolve:1039:24
+      1    1.0%    LazyCompile: ~C node:internal/deps/cjs-module-lexer/dist/lexer:1:1152
+      1  100.0%      LazyCompile: ~parse node:internal/deps/cjs-module-lexer/dist/lexer:1:131
+      1  100.0%        LazyCompile: ~cjsPreparseModuleExports node:internal/modules/esm/translators:192:34
+      1  100.0%          LazyCompile: ~<anonymous> node:internal/modules/esm/translators:231:36
+      1  100.0%            C:\Program Files\nodejs\node.exe
+      1    1.0%    Function: ^realpathSync node:fs:2412:22
+      1  100.0%      Function: ^finalizeResolution node:internal/modules/esm/resolve:391:28
+      1  100.0%        Function: ^moduleResolve node:internal/modules/esm/resolve:966:23
+      1  100.0%          LazyCompile: ~defaultResolve node:internal/modules/esm/resolve:1039:24
+      1  100.0%            Function: ^resolve node:internal/modules/esm/loader:509:16
+      1    1.0%    Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%      Function: ^read node:internal/modules/package_json_reader:16:14
+      1  100.0%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      1  100.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1    1.0%    Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%      Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%        Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1  100.0%          Function: ^require node:internal/modules/cjs/helpers:101:31
+      1  100.0%            Function: ~<anonymous> C:\Users\Patat\OneDrive\Documentos\CODERHOUSE\Desafios\Desafio 16\node_modules\mongoose\lib\schema\SubdocumentPath.js:1:1
+      1    1.0%    Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%      Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%        Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%          Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1  100.0%            Function: ^require node:internal/modules/cjs/helpers:101:31
+      1    1.0%    Function: ^<anonymous> node:internal/fs/utils:668:38
+      1  100.0%      Function: ^<anonymous> node:internal/fs/utils:680:42
+      1  100.0%        Function: ^openSync node:fs:576:18
+      1  100.0%          Function: ^readFileSync node:fs:450:22
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+

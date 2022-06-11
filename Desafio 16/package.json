@@ -1,0 +1,39 @@
+{
+  "name": "desafio12",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon ./src/server.js --PORT 8080",
+    "clusterN": "nodemon ./src/server.cluster.js",
+    "foreverr": "forever start ./src/server.js",
+    "fork": "pm2 start ./src/server.js --watch",
+    "cluster": "pm2 start ./src/server.js --watch -i 4",
+    "arti": "artillery quick --count 50 -n 20 http://localhost:8080/info > res.txt",
+    "prof": "node --prof ./src/server.js",
+    "prof2": "node --prof-process resp.log > resp2.txt",
+    "0x": "0x ./src/server.js",
+    "test": "node ./src/util/prueba.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autocannon": "^7.9.0",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "express-session": "^1.17.2",
+    "log4js": "^6.5.2",
+    "mongoose": "^6.3.3",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.5.0",
+    "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0"
+  }
+}
