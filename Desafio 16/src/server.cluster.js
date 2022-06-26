@@ -3,7 +3,7 @@ import cluster from 'cluster';
 import * as AuthController from './controllers/auth.controller.js';
 import { logger } from './logs/loggers.logs.js';
 
-if (cluster.isMaster) {
+if (cluster.isPrimary) {
 	logger.info(`Master ${process.pid} is running`);
 	for (let i = 0; i < 4; i++) {
 		cluster.fork();
