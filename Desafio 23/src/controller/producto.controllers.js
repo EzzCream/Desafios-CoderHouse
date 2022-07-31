@@ -3,16 +3,10 @@ import { logger } from '../logsConfig/loggers.logs.js';
 import { ProductsModels } from '../models/producto.models.js';
 import DAO from '../services/DAO/generalFaactory.DAO.js';
 
-const prueba = [
-	{
-		nombre: 'nombre',
-	},
-];
-
 export const getProducts = async (ctx, next) => {
 	try {
 		const response = await DAO.getFind(ProductsModels);
-		ctx.body = prueba;
+		ctx.body = response;
 		next();
 	} catch (error) {
 		logger.error(error);
